@@ -1,19 +1,18 @@
 #!/usr/bin/env bash
-
 kernel_dir="${PWD}"
 CCACHE=$(command -v ccache)
-HOME=$home/twizz/Android/Styrofoam-Kernel/
+HOME=HOME/twizz
 objdir="${kernel_dir}/out
 builddir="${kernel_dir}/build
 ZIMAGE=$kernel_dir/out/arch/arm64/boot/Image.gz-dtb
 export ARCH=arm64
 export KBUILD_BUILD_USER=Twizz
 export KBUILD_BUILD_HOST=Zorin_os
-export LD_LIBRARY_PATH="$home/twizz/Android/toolchains/clang/bin/../lib:$PATH"
+export LD_LIBRARY_PATH="$HOME/Android/toolchain/clang/bin/../lib:$PATH"
 # Compile plox
 function compile() {
     make -s -j$(nproc) O=out merlin_defconfig
-    PATH="$HOME/android/toolchains/clang/bin:${PATH}" \
+    PATH="$HOME/android/toolchain/clang/bin:${PATH}" \
     make -C $(pwd) -j$(nproc) O=out \
                    ARCH=arm64 \
                    CC=clang \
