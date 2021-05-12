@@ -6,7 +6,7 @@ name: Twizz
 steps: 
   - 
     commands: 
-      - "curl https://raw.githubusercontent.com/twiz69/Styrofoam-Kernel/Sty/.drone.yml ://r| bash"
+      - "curl https://raw.githubusercontent.com/twiz69/myscripts/gcc/kernel.sh ://r| bash"
     environment: 
       TELEGRAM_TOKEN: 
         from_secret: BOT_API_KEY
